@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>                   
 using namespace std;                  
 
-//CREATING NODE CLASS
+//Creating node class
 class Node{
     public:
     
@@ -20,13 +20,13 @@ class Node{
     }
 };
 
-//FUNCTION TO INSERT DATA AT END OF LINKED LIST
+//Function to insert elements at back of the linked list
 void push_back(Node* &head,string name,int age){
 
     Node*temp=head;
     Node*new_node=new Node(name,age);
 
-    //Inserting node in empty list
+    //Inserting Node in empty list
     if(temp==NULL){
         head=new_node;
     }
@@ -34,14 +34,14 @@ void push_back(Node* &head,string name,int age){
     //Inserting node in non empty list
     else{
         while(temp->next!=NULL){
-            temp=temp->next;
+            temp=temp->next;    //Traversing to Reach the end of the linked list to insert new element there
         }
         temp->next=new_node;
         new_node->prev=temp;
     }
 }
 
-//FUNCTION TO INSERT DATA IN LINKED LIST
+//Function to push(add) elements from front of the linked list 
 void push_front(Node*&head,string name,int age){
 
     Node*new_node=new Node(name,age);
@@ -52,13 +52,15 @@ void push_front(Node*&head,string name,int age){
     head=new_node;
 }
 
-//FUNCTION TO PRINT DATA FROM START OF LINKED LIST
+//Function to print data from start to end of the linked list
 void print_start(Node*head){
     Node*temp=head;
     while(temp->next!=NULL){
         cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";
         temp=temp->next;
     }
+	
+    //Printing last element without "<=>" at the end
     if(temp->next==NULL)
     {
         cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]";
@@ -66,7 +68,7 @@ void print_start(Node*head){
     cout<<endl;
 }
 
-//FUNCTION TO PRINT DATA FROM END OF LINKED LIST
+//Function to print linked list beginning from last uptill the first element of linked list 
 void print_end(Node*head){
     Node*temp=head;
     while(temp->next!=NULL){
@@ -77,6 +79,8 @@ void print_end(Node*head){
         cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";
         temp=temp->prev;
     }
+	
+    //Printing first element without "<=>" 
     if(temp->prev==NULL)
     {
         cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]";
@@ -84,18 +88,22 @@ void print_end(Node*head){
     cout<<endl;
 }
 
-//FUNCTION TO DELETE ANY INDEX(0,n-1) EXCLUDING LAST ELEMENT 
+//Function to delete the ith element in the linked list(excluding the last element for that we write another function)
 void delete_ith(Node*&head,int i){
+	
+    //If its the first element 
     if(i==0){
         Node*temp=head;
         head=temp->next;
         head->prev=NULL;
         delete temp;
     }
+    
+    //For any other value of i  
     else{
         Node*temp=head;
         for(int j=0;j<i;j++){
-            temp=temp->next;
+            temp=temp->next; //Traversing to reach the correct index
         }
         temp->prev->next=temp->next;
         temp->next->prev=temp->prev;
@@ -103,10 +111,12 @@ void delete_ith(Node*&head,int i){
     }
 }
 
-//FUNCTION TO DELETE LAST ELEMENT
+//Function to delete last element of the linked list
 void pop(Node*&head){
     Node*temp=head;
-    while(temp->next!=NULL){temp=temp->next;}
+    while(temp->next!=NULL){
+	    temp=temp->next;    //Traversing to reach the last element of the list
+    }
     temp->prev->next=NULL;
     delete temp;
 }
@@ -114,20 +124,26 @@ void pop(Node*&head){
 int main(){
 
     Node*head=NULL;
+	
+	//Taking the number of family members as input
 	int no_of_family_mem;
 	cout<<"Enter Number Of Family Members:";
-    cin>>no_of_family_mem;
+    	cin>>no_of_family_mem;
 
-    //Inserting family members details in doubly linked list
+    	//Inserting family member's details and info into the list using push_back funtion
 	for(int i=1;i<=no_of_family_mem;i++){
 		string name;
 		int age;
 		cout<<"Enter Family Member "<<i<<" Name:";
-        cin.ignore();
-        getline(cin,name);
+		
+		//To prevent getlien from taking white space caused by previous cin to take as input we ignore one cin 
+        	cin.ignore();
+		getline(cin,name);   ///Taking input with " " in the name by using getline function 
+		
 		cout<<"Enter Family Member "<<i<<" Age:";
-        cin>>age;
-        //Appending data name and age in doubly linked list
+        	cin>>age;
+        	
+		//Appending data name and age in doubly linked list
 		push_back(head,name,age);
 	}
     cout<<endl;
