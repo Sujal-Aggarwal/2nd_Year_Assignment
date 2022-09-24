@@ -150,7 +150,18 @@ int main(){
 
     //Displaying Family details
     cout<<"Doubly Linked list is shown below:"<<endl<<endl;
+	
+    //Printing linked list from beginnning to end using print_start funtion
     print_start(head);
 }
 //Sujal Aggarwal
 //ECE,SID:21105036
+
+
+// Bonus Question :
+/*
+Try to find a way to link the family members' doubly-linked list based on their relationship. (Is it possible?)
+--
+*One way is to take the input in form of the levels of a family tree , ie, taking the input generation wise and inserting the nodes
+  in the list order-wise as in an generic tree.
+*/	
