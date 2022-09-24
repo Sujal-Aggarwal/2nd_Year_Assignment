@@ -55,15 +55,32 @@ void push_front(Node*&head,string name,int age){
 //FUNCTION TO PRINT DATA FROM START OF LINKED LIST
 void print_start(Node*head){
     Node*temp=head;
-    while(temp!=NULL){cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";temp=temp->next;}
+    while(temp->next!=NULL){
+        cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";
+        temp=temp->next;
+    }
+    if(temp->next==NULL)
+    {
+        cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]";
+    }
     cout<<endl;
 }
 
 //FUNCTION TO PRINT DATA FROM END OF LINKED LIST
 void print_end(Node*head){
     Node*temp=head;
-    while(temp->next!=NULL){temp=temp->next;}
-    while(temp!=NULL){cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";temp=temp->prev;}
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    while(temp->prev!=NULL)
+    {
+        cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";
+        temp=temp->prev;
+    }
+    if(temp->prev==NULL)
+    {
+        cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]";
+    }
     cout<<endl;
 }
 
@@ -105,15 +122,18 @@ int main(){
 	for(int i=1;i<=no_of_family_mem;i++){
 		string name;
 		int age;
-		cout<<"Enter Family Member "<<i<<" Name:";cin>>name;
-		cout<<"Enter Family Member "<<i<<" Age:";cin>>age;
+		cout<<"Enter Family Member "<<i<<" Name:";
+        cin.ignore();
+        getline(cin,name);
+		cout<<"Enter Family Member "<<i<<" Age:";
+        cin>>age;
         //Appending data name and age in doubly linked list
 		push_back(head,name,age);
 	}
     cout<<endl;
 
     //Displaying Family details
-    cout<<"Doubly Linked list with my family members as elements is shown below:"<<endl<<endl;
+    cout<<"Doubly Linked list is shown below:"<<endl<<endl;
     print_start(head);
 }
 //Sujal Aggarwal
