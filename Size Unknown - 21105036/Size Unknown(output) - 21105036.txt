@@ -1,0 +1,15 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\sujal\Desktop\code> cd "c:\Users\sujal\Desktop\code\" ; if ($?) { g++ 1.cpp -o 1 } ; if ($?) { .\1 }
+Enter the number of elements in the array : 
+10
+Enter the elements of the array : 
+6 9 16 19 21 27 34 39 46 50
+Enter the element you want to search :
+34
+Choose the type of search you want to do (linear(L) or binary(B) ) :
+B
+Index of 34 in the given array is : 6
