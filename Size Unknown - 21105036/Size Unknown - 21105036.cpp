@@ -103,25 +103,16 @@ int main(){
 	/* Firstly , finding whether the element is present in array or not ( garbage or inf loops will return different values in linear and binary search) */
 	int index_linear = linear_search(arr,z);
 	int index_binary = binary_search(arr,z);
-
-	if(index_binary!=index_linear)
-	{
-		cout<<"Element is not present in the array"<<endl;
-	}
-
-	else
-	{
     if(decide=='L'){
-      cout<<" Index of "<< z << " in the given array is : "<<index_linear<<endl;
+            cout<<" Index of "<< z << " in the given array is : "<<index_linear<<endl;
     }
     else if (decide=='B'){
-      cout<<" Index of "<<z<< " in the given array is : "<<index_binary<<endl;
+            cout<<" Index of "<<z<< " in the given array is : "<<index_binary<<endl;
     }
     else {
-      cout<<" Please enter valid options :"<<endl;
-      cout<< " L for lineary search"<<endl;
-      cout<< " B for binary search"<<endl;
+        cout<<" Please enter valid options :"<<endl;
+        cout<< " L for lineary search"<<endl;
+        cout<< " B for binary search"<<endl;
 	}
-    }
 	delete[] arr;
 }
