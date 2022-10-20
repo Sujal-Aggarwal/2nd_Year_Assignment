@@ -17,14 +17,7 @@ Ques1 What is the difference between in-place and out-place sorting algorithms?
 
 
 
-//Ques2 Implement Insertion sort in both (in-place and out-place) manner.
-
-        //Insertion Sort Using In-Place Algorithm
-        #include <iostream>
-        using namespace std;
-
-/*
-Implementation of Insertion Sort in both in-pace and out-place manner 
+//Ques2 Implement Insertion sort in both (in-place and out-place) manner.]
 */
 
 #include<bits/stdc++.h>
