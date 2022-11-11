@@ -1,0 +1,12 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\sujal\Desktop\code> cd "c:\Users\sujal\Desktop\code\" ; if ($?) { g++ 1.cpp -o 1 } ; if ($?) { .\1 }
+Enter the size of array : 5
+Enter the elements of the array: 2 54 23 90 12
+Comparison between Insertion and Bubble sort :
+1. On the basis of number of comparisons :  Both require equal number of operations.
+2. On the basis of number of swaps :  More swaps are required for bubble sort.
+3. As both Bubble Sort and Selection Sort are in-place algorithms, hence both of their In-place Algorithm have been written above.
