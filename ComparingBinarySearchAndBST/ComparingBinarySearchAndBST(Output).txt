@@ -1,0 +1,27 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\sujal\Desktop\code> cd "c:\Users\sujal\Desktop\code\" ; if ($?) { g++ 1.cpp -o 1 } ; if ($?) { .\1 }
+
+Enter number elements in the ARRAY to form BST:5
+
+Enter elements of the array to form BST:2 5 6 8 1
+
+Array:[2 5 6 8 1 ]
+
+Binary Search Tree using Level Order Traversal
+
+2
+1 5
+6
+8
+
+Enter data to be deleted from BST:5
+
+Binary Search Tree after deleting:5
+
+2
+1 6
+8
